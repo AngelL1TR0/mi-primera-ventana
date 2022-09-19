@@ -74,6 +74,7 @@ public class MyRadioButons {
 
         f.setContentPane(mainPanel);
 
+        //Estos dos comandos siempre al final, si no crea conficto
         f.repaint();
         f.revalidate();
 
