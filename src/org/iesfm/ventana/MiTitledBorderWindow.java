@@ -16,6 +16,6 @@ public class MiTitledBorderWindow {
         JLabel texto = new JLabel("Elige un lenguaje de progamacion");
         mainPanel.add(texto);
 
-        
+
     }
 }
