@@ -1,6 +1,7 @@
 package org.iesfm.ventana;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MiTitledBorderWindow {
 
@@ -13,8 +14,24 @@ public class MiTitledBorderWindow {
 
         JPanel mainPanel = new JPanel();
 
-        JLabel texto = new JLabel("Elige un lenguaje de progamacion");
-        mainPanel.add(texto);
+        JPanel searchPanel = new JPanel();
+        searchPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.CYAN,1,true),"Search"));
+
+        mainPanel.add(searchPanel);
+
+        ButtonGroup grupoBotones = new ButtonGroup();
+        JRadioButton byName = new JRadioButton("By Name");
+        grupoBotones.add(byName);
+        JRadioButton byId = new JRadioButton("By Id");
+        grupoBotones.add(byId);
+
+        searchPanel.add(byName);
+        searchPanel.add(byId);
+
+        f.setContentPane(mainPanel);
+
+        f.repaint();
+        f.revalidate();
 
 
     }
