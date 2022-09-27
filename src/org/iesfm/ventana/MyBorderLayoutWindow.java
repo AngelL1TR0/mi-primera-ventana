@@ -30,8 +30,12 @@ public class MyBorderLayoutWindow {
 
         north.addActionListener(
                 e -> {
-                        north.setVisible(false);
-        });
+                    /* otro metodo mas profesional de hacerlo
+
+                    ((JButton) e.getSource()).setVisible(false);
+                     */
+                    north.setVisible(false);
+                });
         south.addActionListener(
                 e -> {
                     south.setVisible(false);
