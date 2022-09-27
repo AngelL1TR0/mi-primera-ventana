@@ -28,6 +28,27 @@ public class MyBorderLayoutWindow {
         JButton west = new JButton("Hide West Border");
         mainPanel.add(west, BorderLayout.WEST);
 
+        north.addActionListener(
+                e -> {
+                        north.setVisible(false);
+        });
+        south.addActionListener(
+                e -> {
+                    south.setVisible(false);
+                });
+        east.addActionListener(
+                e -> {
+                    east.setVisible(false);
+                });
+        west.addActionListener(
+                e -> {
+                    west.setVisible(false);
+                });
+        center.addActionListener(
+                e -> {
+                    center.setVisible(false);
+                });
+
         f.setContentPane(mainPanel);
 
         f.repaint();
