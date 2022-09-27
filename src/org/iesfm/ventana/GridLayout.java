@@ -20,13 +20,12 @@ public class GridLayout {
 
         mainPanel.setLayout(new BorderLayout());
 
-        northPanel.setLayout(new BorderLayout(5,5));
-
+        northPanel.setLayout(new BorderLayout(15,15));
 
         TextField pantalla = new TextField();
         northPanel.add(pantalla);
 
-        southPanel.setLayout(new java.awt.GridLayout(5,4, 5, 5));
+        southPanel.setLayout(new java.awt.GridLayout(5,4, 10, 10));
 
         JButton rtc = new JButton("Rtc");
         southPanel.add(rtc, BorderLayout.CENTER);
@@ -72,7 +71,7 @@ public class GridLayout {
 
 
         mainPanel.add(northPanel, BorderLayout.NORTH);
-        mainPanel.add(southPanel, BorderLayout.SOUTH);
+        mainPanel.add(southPanel, BorderLayout.CENTER);
 
         f.setContentPane(mainPanel);
 
