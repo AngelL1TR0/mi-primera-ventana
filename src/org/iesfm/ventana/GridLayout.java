@@ -25,7 +25,7 @@ public class GridLayout {
         TextField pantalla = new TextField();
         northPanel.add(pantalla);
 
-        southPanel.setLayout(new java.awt.GridLayout(5,4, 10, 10));
+        southPanel.setLayout(new java.awt.GridLayout(5,4, 2, 2));
 
         JButton rtc = new JButton("Rtc");
         southPanel.add(rtc, BorderLayout.CENTER);
