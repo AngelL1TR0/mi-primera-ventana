@@ -6,66 +6,47 @@ import java.awt.*;
 public class GridLayout {
 
     public static void main(String[] args) {
-
-        JFrame f = new JFrame("Calculadora");
+        JFrame f = new JFrame();
         f.setBounds(
-                700, 200, 400, 400
+                10, 10, 500, 300
         );
+        f.setTitle("Calculadora");
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel northPanel = new JPanel();
-        JPanel southPanel = new JPanel();
         JPanel mainPanel = new JPanel(new BorderLayout());
 
-        northPanel.add(new TextField(30));
+        JPanel resultPanel = new JPanel();
+        mainPanel.add(resultPanel, BorderLayout.NORTH);
+        resultPanel.add(new JTextField(30));
 
-        southPanel.setLayout(new java.awt.GridLayout(5,4, 2, 2));
+        JPanel buttonsPanel = new JPanel(new java.awt.GridLayout(5, 4));
+        mainPanel.add(buttonsPanel, BorderLayout.CENTER);
 
-        JButton rtc = new JButton("Rtc");
-        southPanel.add(rtc, BorderLayout.CENTER);
-        JButton ce = new JButton("CE");
-        southPanel.add(ce, BorderLayout.CENTER);
-        JButton cl = new JButton("CL");
-        southPanel.add(cl, BorderLayout.CENTER);
-        JButton masMenos = new JButton("+/-");
-        southPanel.add(masMenos, BorderLayout.CENTER);
-        JButton siete = new JButton("7");
-        southPanel.add(siete, BorderLayout.CENTER);
-        JButton ocho = new JButton("8");
-        southPanel.add(ocho, BorderLayout.CENTER);
-        JButton nueve = new JButton("9");
-        southPanel.add(nueve, BorderLayout.CENTER);
-        JButton dividir = new JButton("/");
-        southPanel.add(dividir, BorderLayout.CENTER);
-        JButton cuatro = new JButton("4");
-        southPanel.add(cuatro, BorderLayout.CENTER);
-        JButton cinco = new JButton("5");
-        southPanel.add(cinco, BorderLayout.CENTER);
-        JButton seis = new JButton("6");
-        southPanel.add(seis, BorderLayout.CENTER);
-        JButton multiplicacion = new JButton("*");
-        southPanel.add(multiplicacion, BorderLayout.CENTER);
-        JButton uno = new JButton("1");
-        southPanel.add(uno, BorderLayout.CENTER);
-        JButton dos = new JButton("2");
-        southPanel.add(dos, BorderLayout.CENTER);
-        JButton tres = new JButton("3");
-        southPanel.add(tres, BorderLayout.CENTER);
-        JButton menos = new JButton("-");
-        southPanel.add(menos, BorderLayout.CENTER);
-        JButton cero = new JButton("0");
-        southPanel.add(cero, BorderLayout.CENTER);
-        JButton punto = new JButton(".");
-        southPanel.add(punto, BorderLayout.CENTER);
-        JButton igual = new JButton("=");
-        southPanel.add(igual, BorderLayout.CENTER);
-        JButton suma = new JButton("+");
-        southPanel.add(suma, BorderLayout.CENTER);
+        buttonsPanel.add(new JButton("Rtc"));
+        buttonsPanel.add(new JButton("CE"));
+        buttonsPanel.add(new JButton("CL"));
+        buttonsPanel.add(new JButton("+/-"));
 
+        buttonsPanel.add(new JButton("7"));
+        buttonsPanel.add(new JButton("8"));
+        buttonsPanel.add(new JButton("9"));
+        buttonsPanel.add(new JButton("/"));
 
-        mainPanel.add(northPanel, BorderLayout.NORTH);
-        mainPanel.add(southPanel, BorderLayout.CENTER);
+        buttonsPanel.add(new JButton("4"));
+        buttonsPanel.add(new JButton("5"));
+        buttonsPanel.add(new JButton("6"));
+        buttonsPanel.add(new JButton("X"));
+
+        buttonsPanel.add(new JButton("1"));
+        buttonsPanel.add(new JButton("2"));
+        buttonsPanel.add(new JButton("3"));
+        buttonsPanel.add(new JButton("-"));
+
+        buttonsPanel.add(new JButton("0"));
+        buttonsPanel.add(new JButton("."));
+        buttonsPanel.add(new JButton("="));
+        buttonsPanel.add(new JButton("+"));
 
         f.setContentPane(mainPanel);
 
