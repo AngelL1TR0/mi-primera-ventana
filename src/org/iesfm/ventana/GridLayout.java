@@ -6,11 +6,10 @@ import java.awt.*;
 public class GridLayout {
 
     public static void main(String[] args) {
-        JFrame f = new JFrame();
+        JFrame f = new JFrame("Calculadora");
         f.setBounds(
                 10, 10, 500, 300
         );
-        f.setTitle("Calculadora");
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
