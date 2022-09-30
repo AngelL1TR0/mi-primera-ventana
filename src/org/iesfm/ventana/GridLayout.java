@@ -16,20 +16,14 @@ public class GridLayout {
 
         JPanel northPanel = new JPanel();
         JPanel southPanel = new JPanel();
-        JPanel mainPanel = new JPanel();
+        JPanel mainPanel = new JPanel(new BorderLayout());
 
-        mainPanel.setLayout(new BorderLayout());
-
-        northPanel.setLayout(new BorderLayout(15,15));
-
-        TextField pantalla = new TextField();
-        northPanel.add(pantalla);
+        northPanel.add(new TextField(30));
 
         southPanel.setLayout(new java.awt.GridLayout(5,4, 2, 2));
 
         JButton rtc = new JButton("Rtc");
         southPanel.add(rtc, BorderLayout.CENTER);
-        rtc.addActionListener(e -> {});
         JButton ce = new JButton("CE");
         southPanel.add(ce, BorderLayout.CENTER);
         JButton cl = new JButton("CL");
