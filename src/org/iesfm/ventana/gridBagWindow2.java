@@ -23,7 +23,7 @@ public class gridBagWindow2 {
                         2,
                         2,
                         1.0,
-                        4.0,
+                        4,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.BOTH,
                         new Insets(0,0,0,0),
