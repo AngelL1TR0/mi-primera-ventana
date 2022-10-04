@@ -2,6 +2,7 @@ package org.iesfm.ventana;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Set;
 
 public class GridBagLayoutBuilder {
 
@@ -22,22 +23,22 @@ public class GridBagLayoutBuilder {
                         0,
                         1,
                         1,
-                        0.3,
-                        0.3,
-                        GridBagConstraints.CENTER,
-                        GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 0),
+                        1,
+                        1,
+                        GridBagConstraints.EAST,
+                        GridBagConstraints.NONE,
+                        new Insets(0, 0, 0, 5),
                         0, 0));
 
         mainPanel.add(new JLabel("Street"),
                 new GridBagConstraints(
                         1,
                         1,
-                        1,
+                        2,
                         1,
                         0.3,
                         0.3,
-                        GridBagConstraints.SOUTH,
+                        GridBagConstraints.EAST,
                         GridBagConstraints.BOTH,
                         new Insets(0, 0, 0, 0),
                         0, 0));
@@ -62,8 +63,8 @@ public class GridBagLayoutBuilder {
                         0.3,
                         0.3,
                         GridBagConstraints.EAST,
-                        GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 0),
+                        GridBagConstraints.NONE,
+                        new Insets(0, 0, 0, 5),
                         0, 0));
         mainPanel.add(new JLabel("Zip Code"),
                 new GridBagConstraints(
@@ -85,9 +86,9 @@ public class GridBagLayoutBuilder {
                         1,
                         0.3,
                         0.3,
-                        GridBagConstraints.CENTER,
-                        GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 0),
+                        GridBagConstraints.EAST,
+                        GridBagConstraints.NONE,
+                        new Insets(0, 0, 0, 5),
                         0, 0));
         mainPanel.add(new JLabel("Phone"),
                 new GridBagConstraints(
@@ -97,9 +98,9 @@ public class GridBagLayoutBuilder {
                         1,
                         0.3,
                         0.3,
-                        GridBagConstraints.CENTER,
-                        GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 0),
+                        GridBagConstraints.EAST,
+                        GridBagConstraints.NONE,
+                        new Insets(0, 0, 0, 5),
                         0, 0));
         mainPanel.add(new JLabel("Description"),
                 new GridBagConstraints(
@@ -109,9 +110,9 @@ public class GridBagLayoutBuilder {
                         1,
                         0.3,
                         0.3,
-                        GridBagConstraints.NORTH,
-                        GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 0),
+                        GridBagConstraints.NORTHEAST,
+                        GridBagConstraints.NONE,
+                        new Insets(0, 0, 0, 5),
                         0, 0));
         mainPanel.add(new JTextField(),
                 new GridBagConstraints(
