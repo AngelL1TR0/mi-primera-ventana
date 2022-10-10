@@ -36,6 +36,7 @@ public class MyListWindow {
         JLabel textoSouth = new JLabel("Se agregó un nuevo elemento");
 
         southPanel.add(textoSouth, BorderLayout.CENTER);
+        southPanel.setVisible(false);
 
         mainPanel.add(southPanel, BorderLayout.SOUTH);
 
@@ -116,6 +117,7 @@ public class MyListWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 peopleModel.addElement(areaTexto.getText());
+                southPanel.setVisible(true);
 
                 if(areaTexto.getText().equals("")){
                     JOptionPane.showMessageDialog(f,"Debes introducir un texto");
@@ -128,6 +130,8 @@ public class MyListWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 int selected = people.getSelectedIndex();
                 peopleModel.removeElementAt(selected);
+                textoSouth.setText("El elemento ha sido eliminado");
+                southPanel.setVisible(true);
             }
         });
 
@@ -135,8 +139,9 @@ public class MyListWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 peopleModel.clear();
-
                 JOptionPane.showMessageDialog(f, "Lista Borrada");
+                southPanel.setVisible(false);
+
             }
         });
 
