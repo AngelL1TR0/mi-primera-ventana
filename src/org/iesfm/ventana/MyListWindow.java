@@ -1,13 +1,9 @@
 package org.iesfm.ventana;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
-import javax.swing.border.SoftBevelBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 public class MyListWindow {
 
@@ -88,7 +84,8 @@ public class MyListWindow {
                         GridBagConstraints.BOTH,
                         new Insets(0, 20, 0, 20),
                         0, 0));
-        centePanel.add(new JButton("Eliminar"),
+        JButton eliminar = new JButton("Eliminar");
+        centePanel.add(eliminar,
                 new GridBagConstraints(
                         0,
                         2,
@@ -100,7 +97,8 @@ public class MyListWindow {
                         GridBagConstraints.HORIZONTAL,
                         new Insets(0, 20, 0, 0),
                         0, 0));
-        centePanel.add(new JButton("Borrar Lista"),
+        JButton eliLista = new JButton("Borrar lista");
+        centePanel.add(eliLista,
                 new GridBagConstraints(
                         2,
                         2,
@@ -118,12 +116,31 @@ public class MyListWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 peopleModel.addElement(areaTexto.getText());
+
+                if(areaTexto.getText().equals("")){
+                    JOptionPane.showMessageDialog(f,"Debes introducir un texto");
+                }
+            }
+        });
+
+        eliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                int selected = people.getSelectedIndex();
+                peopleModel.removeElementAt(selected);
+            }
+        });
+
+        eliLista.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                peopleModel.clear();
+
+                JOptionPane.showMessageDialog(f, "Lista Borrada");
             }
         });
 
         mainPanel.add(centePanel, BorderLayout.CENTER);
-
-
 
         f.setContentPane(mainPanel);
 
