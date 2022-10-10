@@ -2,8 +2,11 @@ package org.iesfm.ventana;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 import javax.swing.border.SoftBevelBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class MyListWindow {
@@ -12,17 +15,22 @@ public class MyListWindow {
 
         JFrame f = new JFrame("FindReplace");
         f.setBounds(
-                10, 10, 500, 300
+                10, 10, 400, 400
         );
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Quita la opcion de grandar la pantalla
+        f.setResizable(false);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout(10,10));
 
         JPanel northPanel = new JPanel();
 
-        JLabel textoNorte = new JLabel("JList");
+        JLabel textoNorte = new JLabel("JList", SwingConstants.CENTER);
+        textoNorte.setBorder(BorderFactory.createLoweredBevelBorder());
+        textoNorte.setPreferredSize(new Dimension(200,50));
+        textoNorte.setFont(new Font("Calibri", Font.PLAIN , 20));
 
         northPanel.add(textoNorte, BorderLayout.CENTER);
 
@@ -37,7 +45,8 @@ public class MyListWindow {
 
         JPanel centePanel = new JPanel(new java.awt.GridBagLayout());
 
-        centePanel.add(new JTextField(),
+        JTextField areaTexto = new JTextField(20);
+        centePanel.add(areaTexto,
                 new GridBagConstraints(
                         0,
                         0,
@@ -47,9 +56,10 @@ public class MyListWindow {
                         1,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0, 0, 0, 0),
+                        new Insets(0, 20, 0, 0),
                         0, 0));
-        centePanel.add(new JButton("Agregar"),
+        JButton agregar = new JButton("Agregar");
+        centePanel.add(agregar,
                 new GridBagConstraints(
                         2,
                         0,
@@ -59,25 +69,24 @@ public class MyListWindow {
                         1,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0, 0, 0, 0),
+                        new Insets(0, 0, 0, 20),
                         0, 0));
+
         JList<String> people = new JList<>();
         DefaultListModel<String> peopleModel = new DefaultListModel<>();
         people.setModel(peopleModel);
 
-        peopleModel.addElement("Paco Locuras");
-
-        centePanel.add(people,
+        centePanel.add(new JScrollPane(people),
                 new GridBagConstraints(
                         0,
                         1,
-                        3,
-                        2,
+                        4,
+                        1,
                         1,
                         1,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.BOTH,
-                        new Insets(0, 0, 0, 0),
+                        new Insets(0, 20, 0, 20),
                         0, 0));
         centePanel.add(new JButton("Eliminar"),
                 new GridBagConstraints(
@@ -89,7 +98,7 @@ public class MyListWindow {
                         1,
                         GridBagConstraints.SOUTH,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0, 0, 0, 0),
+                        new Insets(0, 20, 0, 0),
                         0, 0));
         centePanel.add(new JButton("Borrar Lista"),
                 new GridBagConstraints(
@@ -101,10 +110,20 @@ public class MyListWindow {
                         1,
                         GridBagConstraints.SOUTH,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0, 0, 0, 0),
+                        new Insets(0, 0, 0, 20),
                         0, 0));
 
+
+        agregar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                peopleModel.addElement(areaTexto.getText());
+            }
+        });
+
         mainPanel.add(centePanel, BorderLayout.CENTER);
+
+
 
         f.setContentPane(mainPanel);
 
