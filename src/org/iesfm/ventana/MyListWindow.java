@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class MyListWindow {
 
@@ -27,6 +29,33 @@ public class MyListWindow {
         textoNorte.setBorder(BorderFactory.createLoweredBevelBorder());
         textoNorte.setPreferredSize(new Dimension(200,50));
         textoNorte.setFont(new Font("Calibri", Font.PLAIN , 20));
+
+        textoNorte.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+                textoNorte.setForeground(Color.RED);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+                textoNorte.setForeground(Color.BLACK);
+            }
+        });
 
         northPanel.add(textoNorte, BorderLayout.CENTER);
 
@@ -118,6 +147,7 @@ public class MyListWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 peopleModel.addElement(areaTexto.getText());
                 southPanel.setVisible(true);
+                textoSouth.setText("Añadido el elemento " + areaTexto.getText());
 
                 if(areaTexto.getText().equals("")){
                     JOptionPane.showMessageDialog(f,"Debes introducir un texto");
@@ -130,7 +160,7 @@ public class MyListWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 int selected = people.getSelectedIndex();
                 peopleModel.removeElementAt(selected);
-                textoSouth.setText("El elemento ha sido eliminado");
+                textoSouth.setText("El elemento " + areaTexto.getText() + " ha sido eliminado");
                 southPanel.setVisible(true);
             }
         });
@@ -141,7 +171,6 @@ public class MyListWindow {
                 peopleModel.clear();
                 JOptionPane.showMessageDialog(f, "Lista Borrada");
                 southPanel.setVisible(false);
-
             }
         });
 
