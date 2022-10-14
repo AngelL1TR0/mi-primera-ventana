@@ -3,7 +3,7 @@ package org.iesfm.ventana;
 import javax.swing.*;
 import java.awt.*;
 
-public class gridBagWindow2 {
+public class GridBagWindow2 {
 
     public static void main(String[] args) {
 
